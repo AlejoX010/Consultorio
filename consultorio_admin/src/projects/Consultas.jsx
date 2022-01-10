@@ -4,7 +4,7 @@ import Siderbar from '../components/layout/Siderbar';
 import Formtarea from '../components/tasks/FormTarea';
 import Listadotareas from '../components/tasks/ListadoTareas';
 
-const Proyectos = () => {
+const Consultas = () => {
     return (
         <div className='contenedor-app'>
             {/* Este sera el lado izquierdo de la app */}
@@ -25,4 +25,4 @@ const Proyectos = () => {
     );
 }
 
-export default Proyectos;
+export default Consultas;

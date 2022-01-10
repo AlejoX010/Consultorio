@@ -11,10 +11,12 @@ const Nuevamateria = () => {
 
     //State para las Materias
     const [proyecto, guardarProyecto] = useState({
-        nombre: ''
+        nombre: '',
+        tds: '',
+        sexo: ''
     });
 
-    const { nombre } = proyecto
+    const { nombre, tds, sexo } = proyecto
 
     //Lee el contenido del input y lo guarda en el estate
     const onChangeMateria = (e) => {
@@ -29,8 +31,7 @@ const Nuevamateria = () => {
         e.preventDefault()
 
         //Validacion de la materia
-        console.log('Mensaje', nombre);
-        if (nombre === '' || nombre === undefined) {
+        if (nombre === '' || nombre === undefined || tds === '' || tds === undefined || sexo === '' || sexo === undefined) {
             mostrarError()
             return;
         }
@@ -39,12 +40,15 @@ const Nuevamateria = () => {
         agregarProyectos(proyecto)
 
         //Reiniciar el form
-        guardarProyecto ( [
-            {nombre: ''}
+        guardarProyecto ( [{
+            nombre: '',
+            tds: '',
+            sexo: ''
+        }
         ]  )
        
     }
-
+ 
     return (
         <div >
             {/* Este es el boton para que muestre el formulario */}
@@ -65,19 +69,19 @@ const Nuevamateria = () => {
                         value={nombre}
                     />
                      <input type="text" className='input-text' placeholder='Tipo de Sangre' name='tds'
-                        // onChange={onChangeMateria}
-                        // value={tds}
+                         onChange={onChangeMateria}
+                         value={tds}
                     />
                      <input type="text" className='input-text' placeholder='Sexo' name='sexo'
-                        // onChange={onChangeMateria}
-                        // value={sexo}
+                         onChange={onChangeMateria}
+                         value={sexo}
                     />
 
-                    <button type="button" className='btn btn-block btn-primario' onClick={onSubmitProyecto}>Agregar Proyecto</button>
+                    <button type="button" className='btn btn-block btn-primario' onClick={onSubmitProyecto}>Agregar Paciente</button>
                 </form>)}
 
                 {/* Diseño para el error a la hora de validar */}
-                {errorFormulario && <p className='mensaje error'>Nomames Llena los campos</p>}
+                {errorFormulario && <p className='mensaje error'>Campos Incompletos</p>}
         </div>
     );
 }

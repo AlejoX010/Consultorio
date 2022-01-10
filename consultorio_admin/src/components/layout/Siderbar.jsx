@@ -1,14 +1,14 @@
 import React from 'react';
-import Nuevamateria from '../../projects/NuevaMateria';
+import NuevoPaciente from '../../projects/NuevoPaciente';
 import Listado from '../../projects/Listado';
 
 const Siderbar = () => {
     return (
         <aside>
-            <h1>ExDi<span>ProjectS</span></h1>
-            <Nuevamateria/>
+            <h1>ExDi<span>Consultas</span></h1>
+            <NuevoPaciente/>
             <div className="proyectos">
-                <h2>Proyectos</h2>
+                <h2>Pacientes</h2>
                 <Listado/>
             </div>
         </aside>

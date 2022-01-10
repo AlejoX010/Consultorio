@@ -37,7 +37,7 @@ export default (state, action) => {
                 }
 
                 case VALIDAR_FORMULARIO:
-                    return{
+                    return{ 
                         ...state,
                         errorFormulario: true
                     }
